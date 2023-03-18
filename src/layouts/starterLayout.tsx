@@ -1,7 +1,8 @@
+import { GradientBackground, RLogo } from "./utils";
+
+import { ILayout } from "./types";
 import React from "react";
 import { z } from "zod";
-import { ILayout } from "./types";
-import { GradientBackground, RLogo } from "./utils";
 
 const starterLayoutConfig = z.object({
   Name: z.string().default(""),
