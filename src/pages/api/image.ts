@@ -14,7 +14,10 @@ const handler: NextApiHandler = async (req, res) => {
   try {
     const { layoutName, fileType } = await imageReq.parseAsync(req.query);
 
-    const cachedSvg = await getCache(req.query);
+    const cachedSvg = await getCache({
+      ...req.query,
+      layoutName,
+    });
 
     if (cachedSvg) {
       res.statusCode = 200;
